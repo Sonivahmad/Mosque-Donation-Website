@@ -87,7 +87,7 @@ img{max-width:100%;display:block}
 .slide{display:none}
 .slide.active{display:block}
 /* Brighter, accessible Arabic quote colors */
-.ayah-ar{font-family:'Noto Naskh Arabic',serif;font-size:1.4rem;line-height:2.1;color:#0b5c47;margin:.5rem 0;font-weight:700}
+.ayah-ar{font-family:'Noto Naskh Arabic',serif;font-size:1.4rem;line-height:2.1;color:#0b5c47;margin:.5rem 0;font-weight:700;word-wrap:break-word;hyphens:auto;text-align:center}
 body.dark .ayah-ar{color:#ffe4a1;text-shadow:0 1px 1px rgba(0,0,0,.35)}
 .ayah-tr{margin:.25rem 0;color:var(--text)}
 .ayah-ref{color:var(--muted);font-size:.9rem}
@@ -211,32 +211,37 @@ body.dark .nav-toggle:hover{background:#1a2424}
 	.section{padding:32px 0}
 	.section h2{font-size:1.6rem;margin-bottom:20px}
 	.about-card,.donation-card{padding:16px}
-	.quotes .carousel{padding:16px}
-	.ayah-ar{font-size:1.2rem;line-height:1.6}
-	.ayah-ref{font-size:.85rem}
+	.quotes .carousel{padding:12px;max-width:100%;overflow:hidden;border-width:1px}
+	.quotes .carousel-container{max-width:100%;margin:0 auto}
+	.quotes .slides{min-height:120px}
+	.ayah-ar{font-size:1rem;line-height:1.5;text-align:center;word-wrap:break-word;hyphens:auto;padding:0 4px;margin:.3rem 0}
+	.ayah-ref{font-size:.8rem}
 	.gallery-grid{grid-template-columns:1fr;gap:8px}
 	.gallery-grid img{aspect-ratio:16/9}
 	.testi{padding:12px}
 	.testi p{font-size:.9rem}
-	.quick-donate{justify-content:center}
-	.pill{padding:6px 10px;font-size:.85rem}
+	.quick-donate{justify-content:center;flex-wrap:wrap;gap:6px}
+	.pill{padding:6px 10px;font-size:.85rem;min-height:40px;display:flex;align-items:center;justify-content:center}
 	.copy-row{flex-direction:column;align-items:flex-start;gap:4px}
-	.copy-btn{padding:8px 12px;font-size:.85rem}
-	.share-actions{justify-content:center;flex-wrap:wrap}
+	.copy-btn{padding:8px 12px;font-size:.85rem;min-height:40px;display:flex;align-items:center;justify-content:center}
+	.share-actions{justify-content:center;flex-wrap:wrap;gap:6px}
 	.ticker-box{padding:8px}
 	.ticker-track{font-size:.85rem}
-	.footer-grid{grid-template-columns:1fr;gap:16px;text-align:center}
-	.footer-grid > div{text-align:center}
-	.footer-grid h4{font-size:1rem;margin-bottom:8px}
-	.footer-grid ul{list-style:none;padding:0}
-	.footer-grid li{margin:4px 0}
-	.tiny{text-align:center;font-size:.8rem;padding:8px 0}
-	.floating-donate{right:12px;bottom:12px;padding:10px 14px;font-size:.85rem}
-	.dots button{width:10px;height:10px;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
-	.dots button::before{content:'';width:10px;height:10px;border-radius:50%;background:currentColor}
-	.dots button.active::before{background:var(--brand)}
+	.footer-grid{grid-template-columns:1fr;gap:20px;text-align:center;padding:20px 0}
+	.footer-grid > div{text-align:center;margin-bottom:16px}
+	.footer-grid h4{font-size:1rem;margin-bottom:12px;color:#ffffff}
+	.footer-grid p{font-size:.9rem;line-height:1.5;margin-bottom:8px}
+	.footer-grid ul{list-style:none;padding:0;margin:0}
+	.footer-grid li{margin:6px 0;font-size:.9rem}
+	.footer-grid a{color:#d8fff6;text-decoration:none}
+	.tiny{text-align:center;font-size:.8rem;padding:12px 0;border-top:1px solid rgba(255,255,255,.1);margin-top:20px}
+	.floating-donate{right:12px;bottom:12px;padding:10px 14px;font-size:.85rem;min-height:44px;display:flex;align-items:center;justify-content:center}
+	.dots{justify-content:center;margin-top:16px;gap:8px}
+	.dots button{width:8px;height:8px;min-width:32px;min-height:32px;display:flex;align-items:center;justify-content:center;background:transparent;border:none;cursor:pointer}
+	.dots button::before{content:'';width:8px;height:8px;border-radius:50%;background:#cfe3de;transition:all .2s ease}
+	.dots button.active::before{background:var(--brand);transform:scale(1.2)}
 	.ornaments{display:none}
-	.pill,.copy-btn,.btn{min-height:44px;display:flex;align-items:center;justify-content:center}
+	.btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:12px 16px}
 }
 
 @media (max-width:480px){
@@ -245,17 +250,23 @@ body.dark .nav-toggle:hover{background:#1a2424}
 	.hero p{font-size:.95rem}
 	.section h2{font-size:1.4rem}
 	.about-card,.donation-card{padding:12px}
-	.ayah-ar{font-size:1.1rem}
+	.quotes .carousel{padding:8px;border-width:1px}
+	.quotes .slides{min-height:100px}
+	.ayah-ar{font-size:.9rem;line-height:1.4;padding:0 4px;margin:.2rem 0}
+	.ayah-ref{font-size:.75rem}
 	.testi{padding:10px}
-	.pill{padding:5px 8px;font-size:.8rem;min-height:44px;display:flex;align-items:center;justify-content:center}
-	.copy-btn{padding:6px 10px;font-size:.8rem;min-height:44px;display:flex;align-items:center;justify-content:center}
-	.footer-grid h4{font-size:.9rem}
+	.pill{padding:5px 8px;font-size:.8rem;min-height:40px;display:flex;align-items:center;justify-content:center}
+	.copy-btn{padding:6px 10px;font-size:.8rem;min-height:40px;display:flex;align-items:center;justify-content:center}
+	.footer-grid{padding:16px 0;gap:16px}
+	.footer-grid h4{font-size:.9rem;margin-bottom:8px}
+	.footer-grid p{font-size:.85rem}
+	.footer-grid li{font-size:.85rem;margin:4px 0}
 	.floating-donate{padding:8px 12px;font-size:.8rem;min-height:44px;display:flex;align-items:center;justify-content:center}
 	.btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:12px 16px}
 	.theme-toggle,.nav-toggle{min-height:44px;min-width:44px;display:flex;align-items:center;justify-content:center}
-	.dots button{width:12px;height:12px;min-width:44px;min-height:44px;display:flex;align-items:center;justify-content:center}
-	.dots button::before{content:'';width:12px;height:12px;border-radius:50%;background:currentColor}
-	.dots button.active::before{background:var(--brand)}
+	.dots button{width:6px;height:6px;min-width:28px;min-height:28px;display:flex;align-items:center;justify-content:center}
+	.dots button::before{content:'';width:6px;height:6px;border-radius:50%;background:#cfe3de}
+	.dots button.active::before{background:var(--brand);transform:scale(1.3)}
 }
 
 /* Reduce extra space under Make It Count card and add ornaments */
