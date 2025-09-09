@@ -219,6 +219,15 @@ body.dark .nav-toggle:hover{background:#1a2424}
 
 /* Responsive */
 @media (max-width:900px){
+	.hero-cta {
+		justify-content: center !important;
+		text-align: center !important;
+		display: flex !important;
+		flex-wrap: wrap !important;
+		width: 100% !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+	}
 	.about .grid-2 {
 		display: block !important;
 		width: 100% !important;
