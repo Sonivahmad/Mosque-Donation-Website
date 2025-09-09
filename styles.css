@@ -219,6 +219,19 @@ body.dark .nav-toggle:hover{background:#1a2424}
 
 /* Responsive */
 @media (max-width:900px){
+	#about, .about, .about .container, .about .grid-2, .about-card {
+		padding-left: 0 !important;
+		padding-right: 0 !important;
+		margin-left: 0 !important;
+		margin-right: 0 !important;
+		overflow-x: visible !important;
+		width: 100% !important;
+		max-width: 100% !important;
+		box-sizing: border-box !important;
+	}
+	#about *, .about *, .about-card * {
+		word-break: break-word !important;
+	}
 	.container {
 		width: 100% !important;
 		max-width: 100% !important;
