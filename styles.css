@@ -73,11 +73,44 @@ img{max-width:100%;display:block}
 .dots button.active{background:#0b5c47;transform:scale(1.3)}
 
 /* Sections */
-.section{padding:56px 0}
-.about .grid-2{display:grid;grid-template-columns:2fr 1fr;gap:28px}
-.about-card{background:var(--white);border-radius:14px;box-shadow:var(--shadow);padding:22px;border:none;transition:all .3s ease}
-.about-card:hover{transform:translateY(-2px);box-shadow:0 15px 35px rgba(0,0,0,.12)}
-.feature-list{padding-left:18px}
+.section {
+  padding: 56px 0;
+}
+
+.about .grid-2 {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 28px;
+}
+
+.about-card {
+  background: var(--white);
+  border-radius: 14px;
+  box-shadow: var(--shadow);
+  padding: 22px;
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.about-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+}
+
+.feature-list {
+  padding-left: 18px;
+}
+
+/* ✅ Responsive layout for mobile */
+@media (max-width: 768px) {
+  .about .grid-2 {
+    grid-template-columns: 1fr; /* Stack columns */
+  }
+
+  .section {
+    padding: 56px 16px; /* Add side padding on mobile */
+  }
+}
 
 /* Quotes */
 .quotes .container{text-align:center}
