@@ -15,10 +15,12 @@ body{
 	color:var(--text);
 	background:var(--bg);
 	line-height:1.6;
-	overflow-x:hidden
+	overflow-x:hidden;
+	width:100%;
+	min-width:320px
 }
 img{max-width:100%;display:block}
-.container{width:min(1120px,92%);margin:0 auto}
+.container{width:min(1120px,100%);margin:0 auto;padding:0 20px}
 
 /* Header (glass) */
 .site-header{position:sticky;top:0;background:rgba(255,255,255,.6);backdrop-filter:saturate(160%) blur(14px);-webkit-backdrop-filter:saturate(160%) blur(14px);box-shadow:var(--shadow);border-bottom:1px solid rgba(0,0,0,.06);z-index:50}
@@ -38,7 +40,7 @@ img{max-width:100%;display:block}
 .theme-toggle:active{transform:scale(.95)}
 
 /* Enhanced button animations and cursor effects */
-.btn{display:inline-block;padding:10px 16px;border-radius:10px;text-decoration:none;border:1px solid transparent;transition:all .3s ease;cursor:pointer;transform:translateY(0);position:relative;overflow:hidden}
+.btn{display:inline-block;padding:2px 10px;border-radius:10px;text-decoration:none;border:1px solid transparent;transition:all .3s ease;cursor:pointer;transform:translateY(0);position:relative;overflow:hidden}
 .btn:active{transform:translateY(2px) scale(.98)}
 .btn-primary{background:var(--brand);color:var(--white);box-shadow:0 4px 12px rgba(11,92,71,.3)}
 .btn-primary:hover{background:var(--brand-600);box-shadow:0 6px 16px rgba(11,92,71,.4);transform:translateY(-2px)}
@@ -193,31 +195,35 @@ body.dark .nav-toggle:hover{background:#1a2424}
 }
 
 @media (max-width:760px){
-	.container{padding:0 16px}
-	.site-header{padding:12px 0}
-	.site-header .container{flex-direction:column;gap:12px;align-items:center}
-	.brand-name{font-size:1.4rem}
-	.brand-tagline{font-size:.8rem}
-	.header-actions{order:2}
-	.site-nav{order:3;width:100%}
-	.site-nav ul{display:none;position:absolute;right:4%;top:64px;background:var(--white);box-shadow:var(--shadow);padding:12px;border-radius:12px;flex-direction:column;gap:10px;min-width:200px;z-index:1000}
+	html,body{width:100%;overflow-x:hidden}
+	.container{padding:0 16px;width:100%;max-width:100%}
+	.site-header{padding:8px 0;width:100%}
+	.site-header .container{flex-direction:row;gap:8px;align-items:center;padding:8px 16px;width:100%}
+	.brand{flex:1;min-width:0}
+	.brand-logo{width:32px;height:32px;font-size:1rem}
+	.brand-name{font-size:1.2rem}
+	.brand-tagline{font-size:.7rem;display:none}
+	.header-actions{order:2;gap:6px}
+	.site-nav{order:3}
+	.site-nav ul{display:none;position:absolute;right:16px;top:48px;background:var(--white);box-shadow:var(--shadow);padding:8px;border-radius:8px;flex-direction:column;gap:4px;min-width:160px;z-index:1000}
 	.site-nav ul.open{display:flex}
-	.site-nav a{padding:8px 12px;display:block;min-height:44px;display:flex;align-items:center}
-	.nav-toggle{display:inline-block;min-height:44px;min-width:44px}
+	.site-nav a{padding:6px 10px;display:block;min-height:36px;display:flex;align-items:center;font-size:.9rem}
+	.nav-toggle{display:inline-block;min-height:36px;min-width:36px;padding:4px 8px}
+	.theme-toggle{min-height:36px;min-width:36px;padding:4px 8px}
 	.hero{min-height:50vh;text-align:center}
 	.hero h1{font-size:1.8rem;line-height:1.2}
 	.hero p{font-size:1rem;margin:12px 0 20px}
-	.hero .btn{margin:8px 4px}
+	.hero .btn{margin:8px 4px;padding:12px 20px;min-height:44px;display:inline-flex;align-items:center;justify-content:center}
 	.section{padding:32px 0}
-	.section h2{font-size:1.6rem;margin-bottom:20px}
+	.section h2{font-size:1.6rem;margin-bottom:20px;text-align:center}
 	.about-card,.donation-card{padding:16px}
 	.quotes .carousel{padding:12px;max-width:100%;overflow:hidden;border-width:1px}
 	.quotes .carousel-container{max-width:100%;margin:0 auto}
 	.quotes .slides{min-height:120px}
 	.ayah-ar{font-size:1rem;line-height:1.5;text-align:center;word-wrap:break-word;hyphens:auto;padding:0 4px;margin:.3rem 0}
 	.ayah-ref{font-size:.8rem}
-	.gallery-grid{grid-template-columns:1fr;gap:8px}
-	.gallery-grid img{aspect-ratio:16/9}
+	.gallery-grid{grid-template-columns:1fr;gap:12px;width:100%;margin:0 auto}
+	.gallery-grid img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:8px}
 	.testi{padding:12px}
 	.testi p{font-size:.9rem}
 	.quick-donate{justify-content:center;flex-wrap:wrap;gap:6px}
@@ -227,46 +233,65 @@ body.dark .nav-toggle:hover{background:#1a2424}
 	.share-actions{justify-content:center;flex-wrap:wrap;gap:6px}
 	.ticker-box{padding:8px}
 	.ticker-track{font-size:.85rem}
-	.footer-grid{grid-template-columns:1fr;gap:20px;text-align:center;padding:20px 0}
-	.footer-grid > div{text-align:center;margin-bottom:16px}
-	.footer-grid h4{font-size:1rem;margin-bottom:12px;color:#ffffff}
-	.footer-grid p{font-size:.9rem;line-height:1.5;margin-bottom:8px}
-	.footer-grid ul{list-style:none;padding:0;margin:0}
-	.footer-grid li{margin:6px 0;font-size:.9rem}
+	.footer-grid{grid-template-columns:1fr;gap:24px;text-align:center;padding:24px 0;width:100%;margin:0 auto}
+	.footer-grid > div{text-align:center;margin-bottom:20px;width:100%}
+	.footer-grid h4{font-size:1.1rem;margin-bottom:12px;color:#ffffff;text-align:center}
+	.footer-grid p{font-size:.9rem;line-height:1.5;margin-bottom:8px;text-align:center}
+	.footer-grid ul{list-style:none;padding:0;margin:0;text-align:center}
+	.footer-grid li{margin:8px 0;font-size:.9rem;text-align:center}
 	.footer-grid a{color:#d8fff6;text-decoration:none}
-	.tiny{text-align:center;font-size:.8rem;padding:12px 0;border-top:1px solid rgba(255,255,255,.1);margin-top:20px}
+	.tiny{text-align:center;font-size:.8rem;padding:16px 0;border-top:1px solid rgba(255,255,255,.1);margin-top:24px;width:100%}
 	.floating-donate{right:12px;bottom:12px;padding:10px 14px;font-size:.85rem;min-height:44px;display:flex;align-items:center;justify-content:center}
 	.dots{justify-content:center;margin-top:16px;gap:8px}
 	.dots button{width:8px;height:8px;min-width:32px;min-height:32px;display:flex;align-items:center;justify-content:center;background:transparent;border:none;cursor:pointer}
 	.dots button::before{content:'';width:8px;height:8px;border-radius:50%;background:#cfe3de;transition:all .2s ease}
 	.dots button.active::before{background:var(--brand);transform:scale(1.2)}
 	.ornaments{display:none}
-	.btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:12px 16px}
+	.btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:12px 20px;width:auto;min-width:120px}
+	.grid-2{grid-template-columns:1fr;gap:24px;text-align:center}
+	.donation-methods{text-align:left;max-width:100%}
+	.donation-methods li{margin-bottom:16px;padding:12px;border-radius:8px;background:var(--card-bg)}
 }
 
 @media (max-width:480px){
-	.container{padding:0 12px}
-	.hero h1{font-size:1.6rem}
-	.hero p{font-size:.95rem}
-	.section h2{font-size:1.4rem}
-	.about-card,.donation-card{padding:12px}
-	.quotes .carousel{padding:8px;border-width:1px}
+	html,body{width:100%;overflow-x:hidden}
+	.container{padding:0 12px;width:100%;max-width:100%}
+	.site-header{padding:6px 0;width:100%}
+	.site-header .container{padding:6px 12px;width:100%}
+	.brand-logo{width:28px;height:28px;font-size:.9rem}
+	.brand-name{font-size:1.1rem}
+	.nav-toggle,.theme-toggle{min-height:32px;min-width:32px;padding:3px 6px}
+	.site-nav ul{right:12px;top:44px;min-width:140px;padding:6px}
+	.site-nav a{min-height:32px;font-size:.85rem;padding:4px 8px}
+	.hero h1{font-size:1.6rem;text-align:center}
+	.hero p{font-size:.95rem;text-align:center}
+	.hero .btn{padding:10px 16px;min-height:44px;display:inline-flex;align-items:center;justify-content:center;margin:4px 2px}
+	.section h2{font-size:1.4rem;text-align:center}
+	.about-card,.donation-card{padding:12px;margin:0 auto;max-width:100%}
+	.quotes .carousel{padding:8px;border-width:1px;margin:0 auto;max-width:100%}
 	.quotes .slides{min-height:100px}
-	.ayah-ar{font-size:.9rem;line-height:1.4;padding:0 4px;margin:.2rem 0}
-	.ayah-ref{font-size:.75rem}
-	.testi{padding:10px}
-	.pill{padding:5px 8px;font-size:.8rem;min-height:40px;display:flex;align-items:center;justify-content:center}
-	.copy-btn{padding:6px 10px;font-size:.8rem;min-height:40px;display:flex;align-items:center;justify-content:center}
-	.footer-grid{padding:16px 0;gap:16px}
-	.footer-grid h4{font-size:.9rem;margin-bottom:8px}
-	.footer-grid p{font-size:.85rem}
-	.footer-grid li{font-size:.85rem;margin:4px 0}
+	.ayah-ar{font-size:.9rem;line-height:1.4;padding:0 4px;margin:.2rem 0;text-align:center}
+	.ayah-ref{font-size:.75rem;text-align:center}
+	.gallery-grid{grid-template-columns:1fr;gap:8px;width:100%;margin:0 auto}
+	.gallery-grid img{width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;border-radius:6px}
+	.testi{padding:10px;margin:0 auto;max-width:100%}
+	.pill{padding:6px 10px;font-size:.8rem;min-height:44px;display:flex;align-items:center;justify-content:center;flex:1;min-width:70px}
+	.copy-btn{padding:8px 12px;font-size:.8rem;min-height:44px;display:flex;align-items:center;justify-content:center;width:100%;max-width:180px}
+	.footer-grid{padding:20px 0;gap:20px;text-align:center;width:100%;margin:0 auto}
+	.footer-grid > div{text-align:center;margin-bottom:16px;width:100%}
+	.footer-grid h4{font-size:1rem;margin-bottom:10px;color:#ffffff;text-align:center}
+	.footer-grid p{font-size:.85rem;text-align:center;line-height:1.4}
+	.footer-grid li{font-size:.85rem;margin:6px 0;text-align:center}
+	.footer-grid ul{text-align:center}
 	.floating-donate{padding:8px 12px;font-size:.8rem;min-height:44px;display:flex;align-items:center;justify-content:center}
 	.btn{min-height:44px;display:inline-flex;align-items:center;justify-content:center;padding:12px 16px}
-	.theme-toggle,.nav-toggle{min-height:44px;min-width:44px;display:flex;align-items:center;justify-content:center}
 	.dots button{width:6px;height:6px;min-width:28px;min-height:28px;display:flex;align-items:center;justify-content:center}
 	.dots button::before{content:'';width:6px;height:6px;border-radius:50%;background:#cfe3de}
 	.dots button.active::before{background:var(--brand);transform:scale(1.3)}
+	.tiny{text-align:center;font-size:.75rem;padding:12px 0;border-top:1px solid rgba(255,255,255,.1);margin-top:20px;width:100%}
+	.grid-2{grid-template-columns:1fr;gap:20px;text-align:center}
+	.donation-methods{text-align:left;max-width:100%}
+	.donation-methods li{margin-bottom:12px;padding:10px;border-radius:6px;background:var(--card-bg)}
 }
 
 /* Reduce extra space under Make It Count card and add ornaments */
