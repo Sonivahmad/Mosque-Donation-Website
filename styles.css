@@ -220,6 +220,22 @@ body.dark .nav-toggle:hover{background:#1a2424}
 /* Responsive */
 @media (max-width:900px){
 	.hero-cta {
+		display: flex !important;
+		flex-wrap: wrap !important;
+		justify-content: center !important;
+		align-items: center !important;
+		width: 100% !important;
+		margin-left: auto !important;
+		margin-right: auto !important;
+		text-align: center !important;
+	}
+	.hero-cta .btn {
+		margin-left: 6px !important;
+		margin-right: 6px !important;
+		margin-top: 6px !important;
+		margin-bottom: 6px !important;
+	}
+	.hero-cta {
 		justify-content: center !important;
 		text-align: center !important;
 		display: flex !important;
