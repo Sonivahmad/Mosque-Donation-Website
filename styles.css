@@ -101,16 +101,17 @@ img{max-width:100%;display:block}
   padding-left: 18px;
 }
 
-/* ✅ Responsive layout for mobile */
+/* Responsive Fix for Mobile */
 @media (max-width: 768px) {
   .about .grid-2 {
-    grid-template-columns: 1fr; /* Stack columns */
+    grid-template-columns: 1fr; /* Stack columns vertically */
   }
 
   .section {
-    padding: 56px 16px; /* Add side padding on mobile */
+    padding: 56px 16px; /* Add horizontal padding to prevent cutoff */
   }
 }
+
 
 /* Quotes */
 .quotes .container{text-align:center}
@@ -218,6 +219,18 @@ body.dark .nav-toggle:hover{background:#1a2424}
 
 /* Responsive */
 @media (max-width:900px){
+	.about .grid-2 {
+		grid-template-columns: 1fr !important;
+		gap: 12px !important;
+		overflow: visible !important;
+		width: 100% !important;
+	}
+	.about-card {
+		width: 100% !important;
+		overflow: visible !important;
+		max-width: 100% !important;
+		box-sizing: border-box !important;
+	}
 	.about .grid-2,.donate .grid-2{grid-template-columns:1fr}
 	.gallery-grid{grid-template-columns:repeat(2,1fr)}
 	.testimonials .testi-grid{grid-template-columns:1fr}
