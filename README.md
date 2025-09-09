@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # HKK Society — Build a Mosque (Static Site)
 
 ## How to run
@@ -32,3 +33,7 @@ if(donors) donors.textContent='237';
 ## Deploy
 - You can host this static site on GitHub Pages, Netlify, or any static hosting.
 
+=======
+# Mosque-Donation-Website
+A responsive and modern website designed to support mosque fundraising campaigns through online donations. Built with accessibility, ease of use, and spiritual inspiration in mind, this platform enables donors to contribute securely and stay connected with ongoing mosque development projects.
+>>>>>>> ab09f2a2390b48a32e5e12bde531266b5fbaf434
